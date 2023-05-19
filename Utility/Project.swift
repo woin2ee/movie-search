@@ -32,7 +32,7 @@ let utilityTarget: Target = .init(
     additionalFiles: []
 )
 let utilityUnitTestTarget: Target = .init(
-    name: "UnitTests",
+    name: "UtilityUnitTests",
     platform: .iOS,
     product: .unitTests,
     productName: nil,

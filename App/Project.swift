@@ -54,7 +54,7 @@ let appTarget: Target = .init(
     additionalFiles: []
 )
 let appUnitTestTarget: Target = .init(
-    name: "UnitTests",
+    name: "AppUnitTests",
     platform: .iOS,
     product: .unitTests,
     productName: nil,
