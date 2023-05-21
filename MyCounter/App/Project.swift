@@ -17,6 +17,10 @@ let appExecutionInfoPlist: [String: InfoPlist.Value] = [
 let appInfoPlist: [String: InfoPlist.Value] = appBundleConfigurationInfoPlist
     .merging(appUserInterfaceInfoPlist) { $1 }
     .merging(appExecutionInfoPlist) { $1 }
+let baseBuildSettings: SettingsDictionary = [
+    "MARKETING_VERSION": "0.1.0",
+    "CURRENT_PROJECT_VERSION": "1",
+]
 
 // MARK: - Targets
 
@@ -26,7 +30,8 @@ let appTarget: Target = .makeAppTarget(
     deploymentTarget: appDeploymentTarget,
     infoPlist: .dictionary(appInfoPlist),
     entitlements: nil,
-    dependencies: []
+    dependencies: [],
+    settings: .settings(base: baseBuildSettings)
 )
 let appUnitTestTarget: Target = .makeUnitTestsTarget(
     name: "\(appName)UnitTests",
@@ -40,5 +45,6 @@ let appUnitTestTarget: Target = .makeUnitTestsTarget(
 let appProject: Project = .makeProject(
     name: "App",
     targets: [appTarget, appUnitTestTarget],
-    schemes: []
+    schemes: [],
+    additionalFiles: ["Project.swift"]
 )

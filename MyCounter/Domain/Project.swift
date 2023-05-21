@@ -24,5 +24,6 @@ let frameworkUnitTestsTarget: Target = .makeUnitTestsTarget(
 let project: Project = .makeProject(
     name: frameworkName,
     targets: [frameworkTarget, frameworkUnitTestsTarget],
-    schemes: []
+    schemes: [],
+    additionalFiles: ["Project.swift"]
 )

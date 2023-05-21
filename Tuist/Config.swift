@@ -5,5 +5,3 @@ let config = Config(
         .local(path: .relativeToManifest("../../Plugins/MyCounter")),
     ]
 )
-
-let organizationName = "woin2ee"

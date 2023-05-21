@@ -67,7 +67,7 @@ extension Target {
         entitlements: Path?,
         scripts: [TargetScript] = [],
         dependencies: [TargetDependency],
-        settings: Settings? = .settings(),
+        settings: Settings?,
         coreDataModels: [CoreDataModel] = [],
         environment: [String: String] = [:],
         launchArguments: [LaunchArgument] = [],

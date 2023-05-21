@@ -11,7 +11,7 @@ extension Project {
     
     public static func makeProject(
         name: String,
-        organizationName: String? = nil,
+        organizationName: String? = organizationName,
         options: ProjectDescription.Project.Options = .options(),
         packages: [ProjectDescription.Package] = [],
         settings: ProjectDescription.Settings? = .settings(),
