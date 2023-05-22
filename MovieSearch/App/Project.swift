@@ -32,9 +32,11 @@ let appTarget: Target = .makeAppTarget(
     dependencies: [],
     settings: .settings(base: baseBuildSettings)
 )
+
+let appUnitTestTargetName = "\(appName)UnitTests"
 let appUnitTestTarget: Target = .makeUnitTestsTarget(
-    name: "\(appName)UnitTests",
-    bundleId: "\(BASIC_BUNDLE_ID).\(appName)UnitTests",
+    name: appUnitTestTargetName,
+    bundleId: "\(BASIC_BUNDLE_ID).\(appUnitTestTargetName)",
     deploymentTarget: SHARED_DEPLOYMENT_TARGET,
     dependencies: [.target(name: appName)]
 )
@@ -44,5 +46,8 @@ let appUnitTestTarget: Target = .makeUnitTestsTarget(
 let appProject: Project = .makeProject(
     name: "App",
     targets: [appTarget, appUnitTestTarget],
-    schemes: []
+    schemes: [
+        .makeAppScheme(testAction: .targets(["\(appUnitTestTargetName)"])),
+        .hideScheme(name: appUnitTestTargetName),
+    ]
 )

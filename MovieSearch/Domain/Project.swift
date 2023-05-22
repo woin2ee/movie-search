@@ -13,9 +13,11 @@ let frameworkTarget: Target = .makeFrameworkTarget(
         .external(name: "RxSwift")
     ]
 )
+
+let frameworkUnitTestsTargetName = "\(frameworkName)UnitTests"
 let frameworkUnitTestsTarget: Target = .makeUnitTestsTarget(
-    name: "\(frameworkName)UnitTests",
-    bundleId: "\(BASIC_BUNDLE_ID).\(frameworkName)UnitTests",
+    name: frameworkUnitTestsTargetName,
+    bundleId: "\(BASIC_BUNDLE_ID).\(frameworkUnitTestsTargetName)",
     deploymentTarget: SHARED_DEPLOYMENT_TARGET,
     dependencies: [.target(name: frameworkName)]
 )
@@ -25,5 +27,17 @@ let frameworkUnitTestsTarget: Target = .makeUnitTestsTarget(
 let project: Project = .makeProject(
     name: frameworkName,
     targets: [frameworkTarget, frameworkUnitTestsTarget],
-    schemes: []
+    schemes: [
+        .makeFrameworkScheme(
+            name: frameworkName,
+            testAction: .targets(
+                ["\(frameworkUnitTestsTargetName)"],
+                options: .options(
+                    coverage: true,
+                    codeCoverageTargets: ["\(frameworkName)"]
+                )
+            )
+        ),
+        .hideScheme(name: frameworkUnitTestsTargetName),
+    ]
 )
