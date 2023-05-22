@@ -1,21 +1,20 @@
 import ProjectDescription
 import ProjectDescriptionHelpers
 
-let frameworkName = "Domain"
-let frameworkDeploymentTarget: DeploymentTarget = .iOS(targetVersion: "15.0", devices: .iphone)
+let frameworkName = "Utility"
 
 // MARK: - Targets
 
 let frameworkTarget: Target = .makeFrameworkTarget(
     name: frameworkName,
-    bundleId: "\(basicBundleID).\(frameworkName)",
-    deploymentTarget: frameworkDeploymentTarget,
+    bundleId: "\(BASIC_BUNDLE_ID).\(frameworkName)",
+    deploymentTarget: SHARED_DEPLOYMENT_TARGET,
     dependencies: []
 )
 let frameworkUnitTestsTarget: Target = .makeUnitTestsTarget(
     name: "\(frameworkName)UnitTests",
-    bundleId: "\(basicBundleID).\(frameworkName)UnitTests",
-    deploymentTarget: frameworkDeploymentTarget,
+    bundleId: "\(BASIC_BUNDLE_ID).\(frameworkName)UnitTests",
+    deploymentTarget: SHARED_DEPLOYMENT_TARGET,
     dependencies: [.target(name: frameworkName)]
 )
 
@@ -24,6 +23,5 @@ let frameworkUnitTestsTarget: Target = .makeUnitTestsTarget(
 let project: Project = .makeProject(
     name: frameworkName,
     targets: [frameworkTarget, frameworkUnitTestsTarget],
-    schemes: [],
-    additionalFiles: ["Project.swift"]
+    schemes: []
 )
