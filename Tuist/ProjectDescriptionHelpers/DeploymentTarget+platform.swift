@@ -10,7 +10,7 @@ import ProjectDescription
 extension DeploymentTarget {
     
     /// 해당 `DeploymentTarget` 에 대한 `platform` 을 반환합니다.
-    var platform: Platform {
+    public var platform: Platform {
         switch self {
         case .iOS:
             return .iOS
