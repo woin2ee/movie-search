@@ -2,6 +2,9 @@ import ProjectDescription
 import ProjectDescriptionHelpers
 
 let frameworkName = "Utility"
+let dependencies: [TargetDependency] = [
+    .external(name: "RxSwift"),
+]
 
 // MARK: - Targets
 
@@ -9,9 +12,7 @@ let frameworkTarget: Target = .makeFrameworkTarget(
     name: frameworkName,
     bundleId: "\(BASIC_BUNDLE_ID).\(frameworkName)",
     deploymentTarget: SHARED_DEPLOYMENT_TARGET,
-    dependencies: [
-        .external(name: "RxSwift")
-    ]
+    dependencies: dependencies
 )
 
 let frameworkUnitTestsTargetName = "\(frameworkName)UnitTests"

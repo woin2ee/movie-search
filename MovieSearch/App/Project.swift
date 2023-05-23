@@ -20,6 +20,11 @@ let baseBuildSettings: SettingsDictionary = [
     "MARKETING_VERSION": "0.1.0",
     "CURRENT_PROJECT_VERSION": "1",
 ]
+let dependencies: [TargetDependency] = [
+    .external(name: "RxSwift"),
+    .external(name: "Alamofire"),
+    .project(target: "Domain", path: .relativeToRoot("\(APPLICATION_NAME)/Domain")),
+]
 
 // MARK: - Targets
 
@@ -29,11 +34,7 @@ let appTarget: Target = .makeAppTarget(
     deploymentTarget: SHARED_DEPLOYMENT_TARGET,
     infoPlist: .dictionary(appInfoPlist),
     entitlements: nil,
-    dependencies: [
-        .external(name: "RxSwift"),
-        .external(name: "Alamofire"),
-        .project(target: "Domain", path: .relativeToRoot("\(APPLICATION_NAME)/Domain")),
-    ],
+    dependencies: dependencies,
     settings: .settings(base: baseBuildSettings)
 )
 
