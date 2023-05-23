@@ -29,7 +29,10 @@ let appTarget: Target = .makeAppTarget(
     deploymentTarget: SHARED_DEPLOYMENT_TARGET,
     infoPlist: .dictionary(appInfoPlist),
     entitlements: nil,
-    dependencies: [],
+    dependencies: [
+        .external(name: "RxSwift"),
+        .project(target: "Domain", path: .relativeToRoot("\(APPLICATION_NAME)/Domain"))
+    ],
     settings: .settings(base: baseBuildSettings)
 )
 

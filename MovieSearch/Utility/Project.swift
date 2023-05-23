@@ -9,7 +9,9 @@ let frameworkTarget: Target = .makeFrameworkTarget(
     name: frameworkName,
     bundleId: "\(BASIC_BUNDLE_ID).\(frameworkName)",
     deploymentTarget: SHARED_DEPLOYMENT_TARGET,
-    dependencies: []
+    dependencies: [
+        .external(name: "RxSwift")
+    ]
 )
 
 let frameworkUnitTestsTargetName = "\(frameworkName)UnitTests"
