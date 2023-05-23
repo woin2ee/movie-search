@@ -1,9 +1,14 @@
 import ProjectDescription
 import ProjectDescriptionHelpers
 
-let frameworkName = TargetName.utility
+let frameworkName = TargetName.ui
 let dependencies: [TargetDependency] = [
     .external(name: ExternalDependencyName.rxSwift),
+    .external(name: ExternalDependencyName.rxCocoa),
+    .project(target: TargetName.domain,
+             path: .relativeToRoot("\(APPLICATION_NAME)/\(TargetName.domain)")),
+    .project(target: TargetName.utility,
+             path: .relativeToRoot("\(APPLICATION_NAME)/\(TargetName.utility)")),
 ]
 
 // MARK: - Targets

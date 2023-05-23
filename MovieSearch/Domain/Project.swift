@@ -1,9 +1,9 @@
 import ProjectDescription
 import ProjectDescriptionHelpers
 
-let frameworkName = "Domain"
+let frameworkName = TargetName.domain
 let dependencies: [TargetDependency] = [
-    .external(name: "RxSwift"),
+    .external(name: ExternalDependencyName.rxSwift),
 ]
 
 // MARK: - Targets

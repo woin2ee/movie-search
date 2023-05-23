@@ -12,6 +12,6 @@ import RxSwift
 struct SearchMovieUseCase: Domain.SearchMoviesUseCase {
     
     func execute(with query: Domain.MovieSearchQuery) -> RxSwift.Observable<[Domain.Movie]> {
-        return .just([])
+        fatalError("Not implemented.")
     }
 }

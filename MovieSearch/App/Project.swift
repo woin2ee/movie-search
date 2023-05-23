@@ -21,9 +21,10 @@ let baseBuildSettings: SettingsDictionary = [
     "CURRENT_PROJECT_VERSION": "1",
 ]
 let dependencies: [TargetDependency] = [
-    .external(name: "RxSwift"),
-    .external(name: "Alamofire"),
-    .project(target: "Domain", path: .relativeToRoot("\(APPLICATION_NAME)/Domain")),
+    .project(target: TargetName.domain,
+             path: .relativeToRoot("\(APPLICATION_NAME)/\(TargetName.domain)")),
+    .project(target: TargetName.ui,
+             path: .relativeToRoot("\(APPLICATION_NAME)/\(TargetName.ui)")),
 ]
 
 // MARK: - Targets

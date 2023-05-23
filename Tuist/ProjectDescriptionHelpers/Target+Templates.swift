@@ -15,7 +15,7 @@ extension Target {
         bundleId: String,
         deploymentTarget: DeploymentTarget,
         infoPlist: InfoPlist? = .default,
-        sources: SourceFilesList? = "Tests/**",
+        sources: SourceFilesList? = "Tests/UnitTests/**",
         resources: ResourceFileElements? = nil,
         copyFiles: [CopyFilesAction]? = nil,
         headers: Headers? = nil,
