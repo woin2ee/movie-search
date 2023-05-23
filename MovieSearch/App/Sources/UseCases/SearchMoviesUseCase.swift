@@ -9,9 +9,9 @@
 import Domain
 import RxSwift
 
-struct SearchMovieUseCase: Domain.SearchMovieUseCase {
+struct SearchMovieUseCase: Domain.SearchMoviesUseCase {
     
-    func searchMovies(with query: Domain.MovieSearchQuery) -> RxSwift.Observable<[Domain.Movie]> {
+    func execute(with query: Domain.MovieSearchQuery) -> RxSwift.Observable<[Domain.Movie]> {
         return .just([])
     }
 }
