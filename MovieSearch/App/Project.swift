@@ -31,7 +31,8 @@ let appTarget: Target = .makeAppTarget(
     entitlements: nil,
     dependencies: [
         .external(name: "RxSwift"),
-        .project(target: "Domain", path: .relativeToRoot("\(APPLICATION_NAME)/Domain"))
+        .external(name: "Alamofire"),
+        .project(target: "Domain", path: .relativeToRoot("\(APPLICATION_NAME)/Domain")),
     ],
     settings: .settings(base: baseBuildSettings)
 )
