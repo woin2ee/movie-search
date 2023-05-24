@@ -14,9 +14,10 @@ final class DIContainer {
     static let shared: DIContainer = .init()
     
     private let container = Container()
+    private let assembler: Assembler
     
     private init() {
-        _ = Assembler(
+        assembler = Assembler(
             [
                 UIAssembly(),
             ],

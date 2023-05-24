@@ -16,6 +16,7 @@ public final class UIAssembly: Assembly {
         let assemblies: [Assembly] = [
             ViewControllerAssembly(),
             ViewModelAssembly(),
+            UseCaseAssembly(),
         ]
         assemblies.forEach { $0.assemble(container: container) }
     }
