@@ -19,7 +19,7 @@ final class SceneDelegate: NSObject, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
         
-        let viewController: MovieSearchViewController = DIContainer.shared.resolve()
+        @DI var viewController: MovieSearchViewController
         window?.rootViewController = viewController
     }
 }
