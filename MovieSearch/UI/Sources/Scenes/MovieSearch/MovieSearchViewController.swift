@@ -8,17 +8,21 @@
 
 import UIKit
 
-public final class MovieSearchViewController: UIViewController {
+public final class MovieSearchViewController: BaseViewController {
     
     let viewModel: MovieSearchViewModel
     
     init(viewModel: MovieSearchViewModel) {
         self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
+        super.init()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = .systemBackground
+    }
 }

@@ -5,6 +5,8 @@
 //  Created by Jaewon Yun on 2023/05/19.
 //
 
+import Swinject
+import UI
 import UIKit
 
 final class SceneDelegate: NSObject, UIWindowSceneDelegate {
@@ -17,7 +19,7 @@ final class SceneDelegate: NSObject, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
         
-        let viewController = HomeViewController()
+        let viewController: MovieSearchViewController = DIContainer.shared.resolve()
         window?.rootViewController = viewController
     }
 }
