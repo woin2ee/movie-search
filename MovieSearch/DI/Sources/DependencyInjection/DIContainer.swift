@@ -7,16 +7,15 @@
 //
 
 import Swinject
-import UI
 
-final class DIContainer {
+public final class DIContainer {
     
-    static let shared: DIContainer = .init()
+    public static let shared: DIContainer = .init()
     
-    private let container = Container()
-    private let assembler: Assembler
+    let container = Container()
+    let assembler: Assembler
     
-    private init() {
+    init() {
         assembler = Assembler(
             [
                 UIAssembly(),
@@ -25,7 +24,7 @@ final class DIContainer {
         )
     }
     
-    func resolve<T>() -> T {
+    public func resolve<T>() -> T {
         guard let resolved = container.resolve(T.self) else {
             fatalError("\(T.self) type not registered.")
         }

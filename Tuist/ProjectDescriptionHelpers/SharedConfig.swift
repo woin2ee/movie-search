@@ -26,6 +26,7 @@ public struct TargetName {
     public static let domain = "Domain"
     public static let ui = "UI"
     public static let utility = "Utility"
+    public static let di = "DI"
 }
 
 public struct ExternalDependencyName {

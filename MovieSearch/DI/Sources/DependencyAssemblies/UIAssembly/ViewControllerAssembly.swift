@@ -7,6 +7,7 @@
 //
 
 import Swinject
+import UI
 
 final class ViewControllerAssembly: Assembly {
     

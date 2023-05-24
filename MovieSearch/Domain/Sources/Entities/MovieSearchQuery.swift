@@ -9,6 +9,7 @@
 import Foundation
 
 public struct MovieSearchQuery {
+    
     let keyword: String
     
     public init(keyword: String) {

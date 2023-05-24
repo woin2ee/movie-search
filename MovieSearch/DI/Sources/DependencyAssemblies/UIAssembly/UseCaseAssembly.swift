@@ -8,12 +8,13 @@
 
 import Domain
 import Swinject
+import UI
 
 final class UseCaseAssembly: Assembly {
     
     func assemble(container: Container) {
         container.register(Domain.SearchMoviesUseCase.self) { _ in
-            return SearchMoviesUseCase()
+            return UI.SearchMoviesUseCase.shared
         }
     }
 }

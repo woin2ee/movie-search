@@ -7,11 +7,11 @@
 //
 
 @propertyWrapper
-final class DI<T> {
+public final class DI<T> {
     
-    let wrappedValue: T
+    public let wrappedValue: T
     
-    init() {
+    public init() {
         self.wrappedValue = DIContainer.shared.resolve()
     }
 }

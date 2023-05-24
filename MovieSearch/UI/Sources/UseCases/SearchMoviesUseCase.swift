@@ -9,9 +9,11 @@
 import Domain
 import RxSwift
 
-struct SearchMoviesUseCase: Domain.SearchMoviesUseCase {
+public struct SearchMoviesUseCase: Domain.SearchMoviesUseCase {
     
-    func execute(with query: Domain.MovieSearchQuery) -> RxSwift.Observable<[Domain.Movie]> {
+    public static var shared: Domain.SearchMoviesUseCase = SearchMoviesUseCase()
+    
+    public func execute(with query: Domain.MovieSearchQuery) -> RxSwift.Observable<[Domain.Movie]> {
         fatalError("Not implemented.")
     }
 }

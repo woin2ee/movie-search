@@ -11,11 +11,11 @@ import RxSwift
 import RxCocoa
 import Utility
 
-final class MovieSearchViewModel: ViewModelType {
+public final class MovieSearchViewModel: ViewModelType {
     
     let searchMoviesUseCase: Domain.SearchMoviesUseCase
     
-    init(searchMoviesUseCase: Domain.SearchMoviesUseCase) {
+    public init(searchMoviesUseCase: Domain.SearchMoviesUseCase) {
         self.searchMoviesUseCase = searchMoviesUseCase
     }
     

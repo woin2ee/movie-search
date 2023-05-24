@@ -8,6 +8,7 @@
 
 import Domain
 import Swinject
+import UI
 
 final class ViewModelAssembly: Assembly {
     

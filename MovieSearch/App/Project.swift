@@ -21,11 +21,10 @@ let baseBuildSettings: SettingsDictionary = [
     "CURRENT_PROJECT_VERSION": "1",
 ]
 let dependencies: [TargetDependency] = [
-    .project(target: TargetName.domain,
-             path: .relativeToRoot("\(APPLICATION_NAME)/\(TargetName.domain)")),
     .project(target: TargetName.ui,
              path: .relativeToRoot("\(APPLICATION_NAME)/\(TargetName.ui)")),
-    .external(name: ExternalDependencyName.swinject),
+    .project(target: TargetName.di,
+             path: .relativeToRoot("\(APPLICATION_NAME)/\(TargetName.di)")),
 ]
 
 // MARK: - Targets

@@ -5,7 +5,7 @@
 //  Created by Jaewon Yun on 2023/05/19.
 //
 
-import Swinject
+import DI
 import UI
 import UIKit
 

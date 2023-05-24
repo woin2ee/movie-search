@@ -9,5 +9,8 @@
 import RxSwift
 
 public protocol SearchMoviesUseCase {
+    
+    static var shared: SearchMoviesUseCase { get }
+    
     func execute(with query: MovieSearchQuery) -> Observable<[Movie]>
 }

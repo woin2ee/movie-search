@@ -7,12 +7,11 @@
 //
 
 import Swinject
+import UI
 
-public final class UIAssembly: Assembly {
+final class UIAssembly: Assembly {
     
-    public init() {}
-    
-    public func assemble(container: Container) {
+    func assemble(container: Container) {
         let assemblies: [Assembly] = [
             ViewControllerAssembly(),
             ViewModelAssembly(),

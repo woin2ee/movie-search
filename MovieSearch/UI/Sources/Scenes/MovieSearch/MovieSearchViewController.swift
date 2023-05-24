@@ -12,7 +12,7 @@ public final class MovieSearchViewController: BaseViewController {
     
     let viewModel: MovieSearchViewModel
     
-    init(viewModel: MovieSearchViewModel) {
+    public init(viewModel: MovieSearchViewModel) {
         self.viewModel = viewModel
         super.init()
     }
