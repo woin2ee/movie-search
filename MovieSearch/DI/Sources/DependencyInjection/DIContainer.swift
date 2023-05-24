@@ -18,6 +18,7 @@ public final class DIContainer {
     init() {
         assembler = Assembler(
             [
+                DomainAssembly(),
                 UIAssembly(),
             ],
             container: container

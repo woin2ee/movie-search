@@ -1,6 +1,6 @@
 //
-//  UIAssembly.swift
-//  UI
+//  DomainAssembly.swift
+//  DI
 //
 //  Created by Jaewon Yun on 2023/05/24.
 //  Copyright © 2023 woin2ee. All rights reserved.
@@ -8,12 +8,12 @@
 
 import Swinject
 
-final class UIAssembly: Assembly {
+final class DomainAssembly: Assembly {
     
     func assemble(container: Container) {
         let assemblies: [Assembly] = [
-            ViewControllerAssembly(),
-            ViewModelAssembly(),
+            RepositoryAssembly(),
+            UseCaseAssembly(),
         ]
         assemblies.forEach { $0.assemble(container: container) }
     }

@@ -14,7 +14,7 @@ final class ViewModelAssembly: Assembly {
     
     func assemble(container: Swinject.Container) {
         container.register(MovieSearchViewModel.self) { r in
-            let searchMoviesUseCase = r.resolve(Domain.SearchMoviesUseCase.self)!
+            let searchMoviesUseCase = r.resolve(SearchMoviesUseCaseProtocol.self)!
             return MovieSearchViewModel(searchMoviesUseCase: searchMoviesUseCase)
         }
     }

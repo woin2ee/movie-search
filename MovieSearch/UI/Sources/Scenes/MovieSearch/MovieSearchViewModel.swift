@@ -13,9 +13,9 @@ import Utility
 
 public final class MovieSearchViewModel: ViewModelType {
     
-    let searchMoviesUseCase: Domain.SearchMoviesUseCase
+    let searchMoviesUseCase: SearchMoviesUseCaseProtocol
     
-    public init(searchMoviesUseCase: Domain.SearchMoviesUseCase) {
+    public init(searchMoviesUseCase: SearchMoviesUseCaseProtocol) {
         self.searchMoviesUseCase = searchMoviesUseCase
     }
     

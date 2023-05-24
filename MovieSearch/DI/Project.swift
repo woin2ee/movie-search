@@ -6,6 +6,8 @@ let dependencies: [TargetDependency] = [
     .external(name: ExternalDependencyName.swinject),
     .project(target: TargetName.ui,
              path: .relativeToRoot("\(APPLICATION_NAME)/\(TargetName.ui)")),
+    .project(target: TargetName.domain,
+             path: .relativeToRoot("\(APPLICATION_NAME)/\(TargetName.domain)")),
 ]
 
 // MARK: - Targets

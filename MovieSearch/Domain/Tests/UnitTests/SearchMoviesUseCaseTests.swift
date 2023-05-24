@@ -1,15 +1,16 @@
 //
-//  EmptyTests.swift
-//  ProjectDescriptionHelpers
+//  SearchMoviesUseCaseTests.swift
+//  Domain
 //
 //  Created by Jaewon Yun on 2023/05/19.
 //
 
+@testable import Domain
 import XCTest
 
-final class EmptyTests: XCTestCase {
+final class SearchMoviesUseCaseTests: XCTestCase {
     
-    var sut: Any!
+    var sut: SearchMoviesUseCase!
     
     override func setUpWithError() throws {
         try super.setUpWithError()

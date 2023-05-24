@@ -8,9 +8,15 @@
 
 import RxSwift
 
-public protocol SearchMoviesUseCase {
+public struct SearchMoviesUseCase: SearchMoviesUseCaseProtocol {
     
-    static var shared: SearchMoviesUseCase { get }
+    let movieRepository: MovieRepositoryProtocol
     
-    func execute(with query: MovieSearchQuery) -> Observable<[Movie]>
+    public init(movieRepository: MovieRepositoryProtocol) {
+        self.movieRepository = movieRepository
+    }
+    
+    public func execute(with query: MovieSearchQuery) -> Observable<[Movie]> {
+        return movieRepository.getMovies(by: query)
+    }
 }
