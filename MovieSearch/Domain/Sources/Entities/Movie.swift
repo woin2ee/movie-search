@@ -9,5 +9,11 @@
 import Foundation
 
 public struct Movie {
+    
     let name: String
+    
+    public init(name: String) {
+        self.name = name
+    }
+    
 }

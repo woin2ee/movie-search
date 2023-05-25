@@ -11,6 +11,9 @@ let dependencies = Dependencies(
         // Alamofire
         .remote(url: "https://github.com/Alamofire/Alamofire.git",
                 requirement: .upToNextMinor(from: "5.6.4")),
+        // RxAlamofire
+        .remote(url: "https://github.com/RxSwiftCommunity/RxAlamofire.git",
+                requirement: .upToNextMinor(from: "6.1.0")),
         // Swinject
         .remote(url: "https://github.com/Swinject/Swinject.git",
                 requirement: .upToNextMinor(from: "2.8.0")),

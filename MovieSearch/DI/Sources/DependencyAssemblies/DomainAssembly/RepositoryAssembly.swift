@@ -7,13 +7,15 @@
 //
 
 import Domain
+import NetworkInfrastructure
 import Swinject
 
 final class RepositoryAssembly: Assembly {
     
     func assemble(container: Container) {
         container.register(MovieRepositoryProtocol.self) { r in
-            fatalError("Not implemented.")
+            return MovieRepository()
         }
     }
+    
 }

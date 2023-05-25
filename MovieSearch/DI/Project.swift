@@ -8,6 +8,8 @@ let dependencies: [TargetDependency] = [
              path: .relativeToRoot("\(APPLICATION_NAME)/\(TargetName.ui)")),
     .project(target: TargetName.domain,
              path: .relativeToRoot("\(APPLICATION_NAME)/\(TargetName.domain)")),
+    .project(target: TargetName.networkInfrastructure,
+             path: .relativeToRoot("\(APPLICATION_NAME)/\(TargetName.networkInfrastructure)")),
 ]
 
 // MARK: - Targets

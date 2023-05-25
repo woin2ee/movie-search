@@ -27,11 +27,15 @@ public struct TargetName {
     public static let ui = "UI"
     public static let utility = "Utility"
     public static let di = "DI"
+    public static let networkInfrastructure = "NetworkInfrastructure"
 }
 
 public struct ExternalDependencyName {
     public static let rxSwift = "RxSwift"
     public static let rxCocoa = "RxCocoa"
+    public static let rxTest = "RxTest"
+    public static let rxBlocking = "RxBlocking"
     public static let alamofire = "Alamofire"
+    public static let rxAlamofire = "RxAlamofire"
     public static let swinject = "Swinject"
 }
