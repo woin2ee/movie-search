@@ -17,4 +17,5 @@ final class ViewControllerAssembly: Assembly {
             return MovieSearchViewController(viewModel: viewModel)
         }
     }
+    
 }

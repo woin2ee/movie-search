@@ -18,4 +18,5 @@ final class ViewModelAssembly: Assembly {
             return MovieSearchViewModel(searchMoviesUseCase: searchMoviesUseCase)
         }
     }
+    
 }

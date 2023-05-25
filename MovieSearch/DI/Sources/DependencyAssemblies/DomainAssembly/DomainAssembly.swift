@@ -17,4 +17,5 @@ final class DomainAssembly: Assembly {
         ]
         assemblies.forEach { $0.assemble(container: container) }
     }
+    
 }

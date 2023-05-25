@@ -18,4 +18,5 @@ protocol ViewModelType {
     
     /// `Input` 을 받아서 적절한 처리 과정을 수행한 뒤 `Output` 을 반환합니다.
     func transform(input: Input) -> Output
+    
 }

@@ -29,6 +29,7 @@ public final class MovieSearchViewModel: ViewModelType {
         
         return .init(searchResults: searchResults)
     }
+    
 }
 
 // MARK: - Input & Output
@@ -42,4 +43,5 @@ extension MovieSearchViewModel {
     struct Output {
         let searchResults: Driver<[Movie]>
     }
+    
 }

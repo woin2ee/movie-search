@@ -17,6 +17,7 @@ extension ObservableConvertibleType {
     public func asSignalOnErrorJustComplete() -> Signal<Element> {
         return self.asSignal(onErrorSignalWith: .empty())
     }
+    
 }
 
 extension ObservableConvertibleType where Element == Void {
@@ -24,6 +25,7 @@ extension ObservableConvertibleType where Element == Void {
     public func asSignalOnErrorJustNext() -> Signal<Element> {
         return self.asSignal(onErrorJustReturn: ())
     }
+    
 }
 
 extension ObservableType {
@@ -43,6 +45,7 @@ extension ObservableType {
     public func unwrapOrThrow<Result>() -> Observable<Result> where Element == Result? {
         return self.map { try Utility.unwrapOrThrow($0) }
     }
+    
 }
 
 extension SharedSequenceConvertibleType {
@@ -62,6 +65,7 @@ extension SharedSequenceConvertibleType {
     public func startWith(_ block: () -> Element) -> SharedSequence<SharingStrategy, Element> {
         return startWith(block())
     }
+    
 }
 
 extension PrimitiveSequenceType where Trait == SingleTrait {
@@ -77,6 +81,7 @@ extension PrimitiveSequenceType where Trait == SingleTrait {
     public func unwrapOrThrow<Result>() -> PrimitiveSequence<Trait, Result> where Element == Result? {
         return self.map { try Utility.unwrapOrThrow($0) }
     }
+    
 }
 
 extension PrimitiveSequenceType where Trait == MaybeTrait {
@@ -84,6 +89,7 @@ extension PrimitiveSequenceType where Trait == MaybeTrait {
     public func mapToVoid() -> PrimitiveSequence<Trait, Void> {
         return self.map { _ in }
     }
+    
 }
 
 extension PrimitiveSequenceType where Trait == CompletableTrait, Element == Never {
@@ -91,4 +97,5 @@ extension PrimitiveSequenceType where Trait == CompletableTrait, Element == Neve
     public func andThenJustNext() -> Single<Void> {
         return self.andThen(.just(()))
     }
+    
 }

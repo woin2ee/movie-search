@@ -11,4 +11,5 @@ import RxSwift
 public protocol MovieRepositoryProtocol {
     
     func getMovies(by query: MovieSearchQuery) -> Observable<[Movie]>
+    
 }

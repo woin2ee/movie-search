@@ -19,4 +19,5 @@ public struct SearchMoviesUseCase: SearchMoviesUseCaseProtocol {
     public func execute(with query: MovieSearchQuery) -> Observable<[Movie]> {
         return movieRepository.getMovies(by: query)
     }
+    
 }

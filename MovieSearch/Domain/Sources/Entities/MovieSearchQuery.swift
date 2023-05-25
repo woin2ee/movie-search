@@ -15,4 +15,5 @@ public struct MovieSearchQuery {
     public init(keyword: String) {
         self.keyword = keyword
     }
+    
 }

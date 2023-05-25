@@ -17,4 +17,5 @@ final class UIAssembly: Assembly {
         ]
         assemblies.forEach { $0.assemble(container: container) }
     }
+    
 }

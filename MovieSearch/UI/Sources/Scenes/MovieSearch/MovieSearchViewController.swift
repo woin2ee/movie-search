@@ -25,4 +25,5 @@ public final class MovieSearchViewController: BaseViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
     }
+    
 }

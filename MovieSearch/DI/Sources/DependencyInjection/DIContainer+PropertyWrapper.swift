@@ -14,4 +14,5 @@ public final class DI<T> {
     public init() {
         self.wrappedValue = DIContainer.shared.resolve()
     }
+    
 }

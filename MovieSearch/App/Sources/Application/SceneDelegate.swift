@@ -22,4 +22,5 @@ final class SceneDelegate: NSObject, UIWindowSceneDelegate {
         @DI var viewController: MovieSearchViewController
         window?.rootViewController = viewController
     }
+    
 }

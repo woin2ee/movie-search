@@ -17,4 +17,5 @@ final class UseCaseAssembly: Assembly {
             return SearchMoviesUseCase(movieRepository: movieRepository)
         }
     }
+    
 }

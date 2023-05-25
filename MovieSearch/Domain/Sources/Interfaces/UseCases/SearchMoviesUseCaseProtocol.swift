@@ -11,4 +11,5 @@ import RxSwift
 public protocol SearchMoviesUseCaseProtocol {
     
     func execute(with query: MovieSearchQuery) -> Observable<[Movie]>
+    
 }

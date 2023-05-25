@@ -9,6 +9,8 @@
 import Foundation
 
 enum UtilityError: Error {
+    
     case castingFailed(object: Any, targetType: Any.Type)
     case nilValue(objectType: Any.Type)
+    
 }
