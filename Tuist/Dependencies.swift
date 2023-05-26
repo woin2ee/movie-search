@@ -17,6 +17,9 @@ let dependencies = Dependencies(
         // Swinject
         .remote(url: "https://github.com/Swinject/Swinject.git",
                 requirement: .upToNextMinor(from: "2.8.0")),
+        // SnapKit
+        .remote(url: "https://github.com/SnapKit/SnapKit.git",
+                requirement: .upToNextMinor(from: "5.0.1")),
     ],
     platforms: [SHARED_DEPLOYMENT_TARGET.platform]
 )

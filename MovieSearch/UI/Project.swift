@@ -5,6 +5,7 @@ let frameworkName = TargetName.ui
 let dependencies: [TargetDependency] = [
     .external(name: ExternalDependencyName.rxSwift),
     .external(name: ExternalDependencyName.rxCocoa),
+    .external(name: ExternalDependencyName.snapKit),
     .project(target: TargetName.domain,
              path: .relativeToRoot("\(APPLICATION_NAME)/\(TargetName.domain)")),
     .project(target: TargetName.utility,
