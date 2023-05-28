@@ -13,9 +13,19 @@ let appUserInterfaceInfoPlist: [String: InfoPlist.Value] = [
 let appExecutionInfoPlist: [String: InfoPlist.Value] = [
     "CFBundleExecutable": "$(EXECUTABLE_NAME)",
 ]
+let dataAndStorageInfoPlist: [String: InfoPlist.Value] = [
+    "NSAppTransportSecurity": [
+        "NSExceptionDomains": [
+            "kobis.or.kr": [
+                "NSExceptionAllowsInsecureHTTPLoads": true
+            ]
+        ]
+    ]
+]
 let appInfoPlist: [String: InfoPlist.Value] = appBundleConfigurationInfoPlist
     .merging(appUserInterfaceInfoPlist) { $1 }
     .merging(appExecutionInfoPlist) { $1 }
+    .merging(dataAndStorageInfoPlist) { $1 }
 let baseBuildSettings: SettingsDictionary = [
     "MARKETING_VERSION": "0.1.0",
     "CURRENT_PROJECT_VERSION": "1",
