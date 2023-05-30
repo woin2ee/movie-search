@@ -22,6 +22,12 @@ public final class MovieSearchViewController: BaseViewController {
         return textField
     }()
     
+    let movieTableView: UITableView = {
+        let tableView: UITableView = .init()
+        tableView.register(MovieTableViewCell.self, forCellReuseIdentifier: MovieTableViewCell.reuseIdentifier)
+        return tableView
+    }()
+    
     public init(viewModel: MovieSearchViewModel) {
         self.viewModel = viewModel
         super.init()
@@ -40,18 +46,27 @@ public final class MovieSearchViewController: BaseViewController {
     
     func bindViewModel() {
         let input: MovieSearchViewModel.Input = .init(
-            searchKeyword: searchTextField.rx.text.orEmpty.asDriver().skip(1)
+            searchKeyword: searchTextField.rx.text.orEmpty.asDriver()
         )
         let output = viewModel.transform(input: input)
         output.searchResults
-            .drive()
+            .skip(1)
+            .drive(movieTableView.rx.items(cellIdentifier: MovieTableViewCell.reuseIdentifier, cellType: MovieTableViewCell.self)) { _, movie, cell in
+                cell.bind(movie: movie)
+            }
             .disposed(by: disposeBag)
     }
     
     func setupSubviews() {
         self.view.addSubview(searchTextField)
         searchTextField.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.top.equalTo(self.view.safeAreaLayoutGuide)
+        }
+        self.view.addSubview(movieTableView)
+        movieTableView.snp.makeConstraints { make in
+            make.top.equalTo(searchTextField.snp.bottom).offset(10)
+            make.leading.trailing.bottom.equalToSuperview()
         }
     }
     

@@ -21,6 +21,8 @@ public final class MovieSearchViewModel: ViewModelType {
     
     func transform(input: Input) -> Output {
         let searchResults = input.searchKeyword
+            .distinctUntilChanged()
+            .debounce(.milliseconds(300))
             .flatMapLatest { keyword in
                 let query: MovieSearchQuery = .init(keyword: keyword)
                 return self.searchMoviesUseCase.execute(with: query)
