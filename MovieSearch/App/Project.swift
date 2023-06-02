@@ -31,10 +31,14 @@ let baseBuildSettings: SettingsDictionary = [
     "CURRENT_PROJECT_VERSION": "1",
 ]
 let dependencies: [TargetDependency] = [
+    .package(product: ExternalDependencyName.lookinServer),
     .project(target: TargetName.ui,
              path: .relativeToRoot("\(APPLICATION_NAME)/\(TargetName.ui)")),
     .project(target: TargetName.di,
              path: .relativeToRoot("\(APPLICATION_NAME)/\(TargetName.di)")),
+]
+let package: [Package] = [
+    .remote(url: "https://github.com/QMUI/LookinServer/", requirement: .upToNextMinor(from: "1.1.0")),
 ]
 
 // MARK: - Targets
@@ -61,6 +65,7 @@ let appUnitTestTarget: Target = .makeUnitTestsTarget(
 
 let appProject: Project = .makeProject(
     name: "App",
+    packages: package,
     targets: [appTarget, appUnitTestTarget],
     schemes: [
         .makeAppScheme(testAction: .targets(["\(appUnitTestTargetName)"])),

@@ -39,4 +39,5 @@ public struct ExternalDependencyName {
     public static let rxAlamofire = "RxAlamofire"
     public static let swinject = "Swinject"
     public static let snapKit = "SnapKit"
+    public static let lookinServer = "LookinServer"
 }
