@@ -4,6 +4,7 @@ import ProjectDescriptionHelpers
 let frameworkName = TargetName.utility
 let dependencies: [TargetDependency] = [
     .external(name: ExternalDependencyName.rxSwift),
+    .external(name: ExternalDependencyName.rxCocoa),
 ]
 
 // MARK: - Targets
